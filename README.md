@@ -5,6 +5,7 @@ Developed with Unreal Engine 5
 ## 🏰 Procedural Dungeon Generator (C++)
 Système de génération de donjons 3D par assemblage de modules (Blueprints) qui d'étend de manière organique (avec gestion intelligente des collisions et des probabilités).
 
+Le concept est simple : vous créez vos propres salles et le système génère automatiquement une disposition aléatoire cohérente. Chaque salle se connecte parfaitement aux autres grâce à un système de points d'entrée et de sortie prédéfinis.
 
 ## 🛠️ Comment l'utiliser ?
 
