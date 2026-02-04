@@ -3,7 +3,28 @@
 Developed with Unreal Engine 5
 
 ## 🏰 Procedural Dungeon Generator (C++)
-Système de génération de donjons 3D par assemblage de modules (Blueprints) avec gestion intelligente des collisions et des probabilités.
+Système de génération de donjons 3D par assemblage de modules (Blueprints) qui d'étend de manière organique (avec gestion intelligente des collisions et des probabilités).
+
+
+## 🛠️ Comment l'utiliser ?
+
+1. **Création des Salles :** * Créez un **Blueprint** héritant de la classe `ARoom`.
+   * Ajustez la `CollisionBox` pour englober toute la surface de votre salle.
+   * Placez des **ArrowComponents** comme enfants de `ExitsRoot` pour définir les points de sortie.
+
+2. **Configuration du Generator :**
+   * Placez l'acteur `AGenerator` dans votre niveau.
+   * Dans le panel **Details**, remplissez la liste `RoomConfigs` :
+     * `RoomClass` : Votre Blueprint de salle.
+     * `Probability` : Poids d'apparition (ex: 1.0 pour commun, 0.1 pour rare).
+     * `bUnique` : À cocher pour les salles qui ne doivent apparaître qu'une fois.
+     * `bMustSpawn` : À cocher pour forcer l'apparition de la salle (ex: la sortie).
+
+3. **Lancement :**
+   * Réglez `NumGeneration` pour définir la taille du donjon.
+   * Appuyez sur **Play** : le donjon se génère automatiquement au `BeginPlay`.
+
+
 
 ### ⚙️ Logique de Génération (`AGenerator.cpp`)
 * **Assemblage par Connecteurs :** Utilise les `FTransform` de points d'ancrage (`UArrowComponent`) pour aligner parfaitement l'entrée d'une nouvelle salle sur la sortie d'une précédente.
